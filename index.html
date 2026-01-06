@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProDraw | Professional Tournament Seeding</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div id="loadingOverlay" style="display:none;">GENERATING OFFICIAL DRAW...</div>
+    
+    <div class="app-container" id="appBody">
+        <aside class="sidebar">
+            <h1>🏆 ProDraw</h1>
+            <div class="input-group">
+                <label>Tournament Name</label>
+                <input type="text" id="tournamentTitleInput" placeholder="e.g., BITS Open 2026">
+            </div>
+            <div class="input-group">
+                <label>Number of Seeds</label>
+                <input type="number" id="numSeeds" value="0" min="0">
+            </div>
+            <div class="input-group">
+                <label>Seeded Players</label>
+                <textarea id="seededPlayers" placeholder="1. Player A&#10;2. Player B..."></textarea>
+            </div>
+            <div class="input-group">
+                <label>Unseeded Players</label>
+                <textarea id="unseededPlayers" placeholder="Player X&#10;Player Y..."></textarea>
+            </div>
+            <button id="generateBtn" class="primary-btn">Generate Official Draw</button>
+            <button id="downloadBtn" class="secondary-btn">Download Portrait PDF</button>
+
+            <footer class="sidebar-footer">
+                <div class="footer-links">
+                    <a href="about.html" target="_blank">About Us</a> | 
+                    <a href="privacy.html" target="_blank">Privacy Policy</a>
+                </div>
+                <p>&copy; 2026 ProDraw Utility</p>
+            </footer>
+        </aside>
+        <main class="viewport">
+            <div class="header-area"><h2 id="displayTitle">Tournament Dashboard</h2></div>
+            <div id="bracketContainer" class="main-bracket-layout"></div>
+        </main>
+    </div>
+    
+    <div id="pdfWrapper" style="display:none; font-size: 0; line-height: 0; background: white;"></div>
+    <script src="script.js"></script>
+</body>
+</html>
